@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos</title>
+    <meta name="description" content="A stunning gallery of Hyderabad memories.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-gradient"></div>
+
+    <header class="glass-header">
+        <div class="header-left">
+
+            <button id="back-btn" class="icon-btn" aria-label="Back" style="display: none;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <h1 id="page-title">My <span class="accent">Gallery</span></h1>
+        </div>
+        <nav class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="image">Photos</button>
+            <button class="filter-btn" data-filter="video">Videos</button>
+        </nav>
+    </header>
+
+    <div id="side-drawer" class="side-drawer">
+        <div class="drawer-header">
+            <button id="close-drawer" class="icon-btn" aria-label="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="drawer-nav">
+            <button class="drawer-item active" data-filter="all">
+                <span class="icon">🖼️</span> All Media
+                <span class="count" id="count-all">0</span>
+            </button>
+            <button class="drawer-item" data-filter="favorites">
+                <span class="icon">❤️</span> Favorites
+                <span class="count" id="count-favorites">0</span>
+            </button>
+            <div class="divider"></div>
+            <button class="drawer-item" data-filter="image">
+                <span class="icon">📷</span> Photos
+                <span class="count" id="count-image">0</span>
+            </button>
+            <button class="drawer-item" data-filter="video">
+                <span class="icon">🎥</span> Videos
+                <span class="count" id="count-video">0</span>
+            </button>
+        </nav>
+    </div>
+    <div id="drawer-backdrop" class="drawer-backdrop"></div>
+
+    <main>
+        <div id="gallery-grid" class="gallery-grid">
+            <!-- Items injected by JS -->
+        </div>
+        <div id="loading-sentinel"></div>
+    </main>
+
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-backdrop"></div>
+        <a id="download-lightbox" class="lightbox-action download" href="#" download aria-label="Download">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+        </a>
+        <button id="close-lightbox" class="lightbox-action close" aria-label="Close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+
+        <button id="prev-btn" class="nav-btn prev" aria-label="Previous">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+
+        <div class="lightbox-content-wrapper">
+            <div id="lightbox-media-container"></div>
+        </div>
+
+        <button id="next-btn" class="nav-btn next" aria-label="Next">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
